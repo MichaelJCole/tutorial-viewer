@@ -2,6 +2,7 @@ if (Meteor.isClient) {
   var blazeTut = TutorialRegistry.tutorials.blaze;
   var angularTut = TutorialRegistry.tutorials.angular;
   var reactTut = TutorialRegistry.tutorials.react;
+  var vueTut = TutorialRegistry.tutorials.vue;
 
   FlowRouter.route('/', {
     triggersEnter: [function(context, redirect) {
@@ -37,7 +38,8 @@ if (Meteor.isClient) {
       return [
         { name: blazeTut.title, slug: "blaze" },
         { name: angularTut.title, slug: "angular" },
-        { name: reactTut.title, slug: "react" }
+        { name: reactTut.title, slug: "react" },
+        { name: vueTut.title, slug: "vue" },
       ]
     },
     getContentBlaze: function () {
@@ -49,6 +51,9 @@ if (Meteor.isClient) {
     getContentAngular: function () {
       return angularTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
     },
+    getContentVue: function () {
+      return vueTut.steps[parseInt(FlowRouter.getParam("step"), 10)].template;
+    },    
     activeTab: function () {
       return FlowRouter.getParam("slug");
     }

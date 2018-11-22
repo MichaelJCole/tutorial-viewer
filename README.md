@@ -5,5 +5,8 @@ Read the Meteor tutorials in a minimalist app
 
 Run:
 
-1. `git submodule update --init --recursive`
-2. `meteor`
+``` bash
+git submodule update --init --recursive
+meteor npm install
+meteor
+```
